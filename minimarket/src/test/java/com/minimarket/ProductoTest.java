@@ -58,7 +58,7 @@ public class ProductoTest {
         cliente.setRoles(Set.of(new Rol("CLIENTE")));
     }
 
-    // ─── Test 1: Creación correcta del producto ───────────────────────────────
+    //  Test 1: Creación correcta del producto 
 
     @Test
     @DisplayName("Debe crear un producto con todos sus datos correctamente")
@@ -72,7 +72,7 @@ public class ProductoTest {
         assertEquals("Bebidas", producto.getCategoria().getNombre());
     }
 
-    // ─── Test 2: Solo ADMIN puede modificar producto ─────────────────────────
+    //  Test 2: Solo ADMIN puede modificar producto 
 
     @Test
     @DisplayName("ADMIN puede modificar el precio de un producto")
@@ -94,7 +94,7 @@ public class ProductoTest {
         assertEquals("Agua Mineral Premium", producto.getNombre());
     }
 
-    // ─── Test 3: CLIENTE no puede modificar producto ──────────────────────────
+    //  Test 3: CLIENTE no puede modificar producto 
 
     @Test
     @DisplayName("CLIENTE no debe tener permiso para modificar productos")
@@ -116,7 +116,7 @@ public class ProductoTest {
                 "El precio no debe cambiar si el usuario no tiene rol ADMIN");
     }
 
-    // ─── Test 4: Validación de stock no negativo ──────────────────────────────
+    //  Test 4: Validación de stock no negativo 
 
     @Test
     @DisplayName("El stock de un producto no debe ser negativo")
@@ -131,7 +131,7 @@ public class ProductoTest {
         assertEquals(5, producto.getStock());
     }
 
-    // ─── Test 5: Producto debe tener categoría asignada ──────────────────────
+    //  Test 5: Producto debe tener categoría asignada 
 
     @Test
     @DisplayName("Un producto debe tener una categoría asignada")

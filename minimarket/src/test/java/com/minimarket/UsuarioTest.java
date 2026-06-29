@@ -47,13 +47,13 @@ public class UsuarioTest {
         cliente.setRoles(Set.of(new Rol("CLIENTE")));
     }
 
-    // ─── Método auxiliar: simula autenticación básica ─────────────────────────
+    //  Método auxiliar: simula autenticación básica 
     private boolean autenticar(Usuario usuario, String usernameIngresado, String passwordIngresada) {
         return usuario.getUsername().equals(usernameIngresado)
             && usuario.getPassword().equals(passwordIngresada);
     }
 
-    // ─── Test 1: Creación correcta de usuario ─────────────────────────────────
+    //  Test 1: Creación correcta de usuario 
 
     @Test
     @DisplayName("Debe crear un usuario ADMIN con todos sus datos")
@@ -72,7 +72,7 @@ public class UsuarioTest {
                 .anyMatch(role -> role.getNombre().equals("ADMIN")));
     }
 
-    // ─── Test 2: Autenticación exitosa con credenciales correctas ────────────
+    //  Test 2: Autenticación exitosa con credenciales correctas 
 
     @Test
     @DisplayName("Autenticación exitosa con credenciales válidas")
@@ -82,7 +82,7 @@ public class UsuarioTest {
                 "La autenticación debe ser exitosa con credenciales correctas");
     }
 
-    // ─── Test 3: Autenticación fallida con contraseña incorrecta ─────────────
+    //  Test 3: Autenticación fallida con contraseña incorrecta 
 
     @Test
     @DisplayName("Autenticación fallida con contraseña incorrecta")
@@ -92,7 +92,7 @@ public class UsuarioTest {
                 "La autenticación debe fallar con contraseña incorrecta");
     }
 
-    // ─── Test 4: Autenticación fallida con usuario inexistente ───────────────
+    //  Test 4: Autenticación fallida con usuario inexistente 
 
     @Test
     @DisplayName("Autenticación fallida con nombre de usuario incorrecto")
@@ -102,7 +102,7 @@ public class UsuarioTest {
                 "La autenticación debe fallar si el username no coincide");
     }
 
-    // ─── Test 5: Roles correctamente asignados por tipo de usuario ───────────
+    //  Test 5: Roles correctamente asignados por tipo de usuario 
 
     @Test
     @DisplayName("Cada tipo de usuario debe tener su rol correspondiente")
@@ -117,7 +117,7 @@ public class UsuarioTest {
                 .anyMatch(r -> r.getNombre().equals("CLIENTE")), "Cliente debe tener rol CLIENTE");
     }
 
-    // ─── Test 6: Comparación de dos usuarios con mismos datos ────────────────
+    //  Test 6: Comparación de dos usuarios con mismos datos 
 
     @Test
     @DisplayName("Dos usuarios con el mismo ID y username deben ser equivalentes")
@@ -137,7 +137,7 @@ public class UsuarioTest {
         assertEquals(usuario1.getPassword(), usuario2.getPassword());
     }
 
-    // ─── Test 7: Asignación de múltiples roles ───────────────────────────────
+    //  Test 7: Asignación de múltiples roles 
 
     @Test
     @DisplayName("Un usuario puede tener múltiples roles")
@@ -154,7 +154,7 @@ public class UsuarioTest {
                 .anyMatch(role -> role.getNombre().equals("ADMIN")));
     }
 
-    // ─── Test 8: Usuario sin roles no tiene acceso privilegiado ──────────────
+    //  Test 8: Usuario sin roles no tiene acceso privilegiado 
 
     @Test
     @DisplayName("Usuario sin roles no debe tener acceso a funciones privilegiadas")

@@ -76,7 +76,7 @@ public class InventarioTest {
         cajero.setRoles(Set.of(new Rol("CAJERO")));
     }
 
-    // ─── Test 1: Movimiento de ENTRADA registrado correctamente ──────────────
+    //  Test 1: Movimiento de ENTRADA registrado correctamente 
 
     @Test
     @DisplayName("Debe registrar un movimiento de entrada correctamente")
@@ -88,7 +88,7 @@ public class InventarioTest {
         assertNotNull(movimientoEntrada.getFechaMovimiento());
     }
 
-    // ─── Test 2: Movimiento de SALIDA registrado correctamente ───────────────
+    //  Test 2: Movimiento de SALIDA registrado correctamente 
 
     @Test
     @DisplayName("Debe registrar un movimiento de salida correctamente")
@@ -99,7 +99,7 @@ public class InventarioTest {
         assertNotNull(movimientoSalida.getProducto());
     }
 
-    // ─── Test 3: Solo ADMIN puede registrar movimientos ──────────────────────
+    //  Test 3: Solo ADMIN puede registrar movimientos
 
     @Test
     @DisplayName("Solo ADMIN puede registrar movimientos de inventario")
@@ -118,8 +118,7 @@ public class InventarioTest {
                 "El CAJERO NO debe poder registrar movimientos de inventario");
     }
 
-    // ─── Test 4: Movimiento está asociado a un producto ──────────────────────
-
+    //  Test 4: Movimiento está asociado a un producto 
     @Test
     @DisplayName("El movimiento de inventario debe estar asociado a un producto válido")
     void testMovimientoAsociadoAProducto() {
@@ -129,7 +128,7 @@ public class InventarioTest {
         assertEquals("Leche Entera", movimientoEntrada.getProducto().getNombre());
     }
 
-    // ─── Test 5: Stock actualiza correctamente tras entrada ──────────────────
+    //  Test 5: Stock actualiza correctamente tras entrada 
 
     @Test
     @DisplayName("El stock debe aumentar tras un movimiento de entrada")
@@ -144,7 +143,7 @@ public class InventarioTest {
                 "El stock debe ser 70 tras recibir 20 unidades");
     }
 
-    // ─── Test 6: No se permite salida si stock es insuficiente ───────────────
+    //  Test 6: No se permite salida si stock es insuficiente 
 
     @Test
     @DisplayName("No se debe permitir salida si el stock es insuficiente")

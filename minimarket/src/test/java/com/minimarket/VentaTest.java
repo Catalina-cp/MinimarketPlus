@@ -152,8 +152,7 @@ public class VentaTest {
                 "El total de la venta debe ser $4800");
         assertEquals(totalEsperado, totalCalculado, 0.01);
     }
-
-    // ─── Test 5: No se genera venta si no hay stock suficiente ───────────────
+    //  Test 5: No se genera venta si no hay stock suficiente 
 
     @Test
     @DisplayName("No debe generarse venta si algún producto no tiene stock suficiente")
@@ -167,7 +166,7 @@ public class VentaTest {
                 "La venta no debe generarse si algún producto no tiene stock suficiente");
     }
 
-    // ─── Test 6: Venta está asociada al cajero correcto ──────────────────────
+    //  Test 6: Venta está asociada al cajero correcto 
 
     @Test
     @DisplayName("La venta debe estar asociada al usuario cajero que la generó")
